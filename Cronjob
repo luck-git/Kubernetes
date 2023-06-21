@@ -9,7 +9,8 @@ metadata:
 spec:
  schedule: "* * * * *"
  jobTemplate:if you want to suspend the CronJob instead of deleting it, you can annotate the CronJob resource to suspend it. 
-   spec:
+***********************************START*******************************************************************  
+spec:
      template:
        spec:
          containers:
@@ -21,6 +22,7 @@ spec:
            - -c
            - date; echo Hello from the Kubernetes cluster
          restartPolicy: OnFailure
+****************************END*********************************
 Kubectl apply -f  jobs-cronjob.yaml
 This cronjob will prints the current time and a hello message every minute:
 To check the result of cronjob -
