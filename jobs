@@ -3,6 +3,7 @@
 ###steps-
 Vi controller-jobs.yaml 
 (It will create a file named by controller-jobs.yaml)
+****************File-Content************************************************
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -16,6 +17,7 @@ spec:
        command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
      restartPolicy: Never
  backoffLimit: 4
+********************END***************************************************
 
 ##Run this yaml file by this command- 
 ##Kubectl apply -f controller-jobs.yaml
