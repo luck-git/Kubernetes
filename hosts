@@ -1,2 +1,4 @@
+To create a hosts file > vi hosts > In this code i mention ec2-user and the SSH key path the which I used in ec2-insatnce.
+***************************************************************************************************************************
 [host] 
 18.221.76.240 ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/home/lucky/Downloads/cloud.pem 
