@@ -1,0 +1,30 @@
+##To Run a Job -
+###Create a directory to perform the task and the yaml files will be saved.
+###steps-
+Vi controller-jobs.yaml 
+(It will create a file named by controller-jobs.yaml)
+apiVersion: batch/v1
+kind: Job
+metadata:
+ name: pi
+spec:
+ template:
+   spec:
+     containers:
+     - name: pi
+       image: perl:5.34.0
+       command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
+     restartPolicy: Never
+ backoffLimit: 4
+
+##Run this yaml file by this command- 
+##Kubectl apply -f controller-jobs.yaml
+###Check on the Status of your job -
+####Kubectl get jobs
+###To view completed Pods of a Job, use 
+###kubectl get pods
+###To list all the Pods that belong to a Job in a machine readable form, you can use a command like this:
+pods=$(kubectl get pods --selector=batch.kubernetes.io/job-name=pi --output=jsonpath='{.items[*].metadata.name}')
+echo $pods
+
+
