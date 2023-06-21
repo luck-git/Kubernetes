@@ -1,0 +1,33 @@
+A CronJob creates Jobs on a repeating schedule.
+One CronJob object is like one line of a crontab (cron table) file on a Unix system. It runs a job periodically on a given schedule, written in Cron format.
+To create a cronjob -
+Vi jobs-cronjob.yaml
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+ name: hello
+spec:
+ schedule: "* * * * *"
+ jobTemplate:if you want to suspend the CronJob instead of deleting it, you can annotate the CronJob resource to suspend it. 
+   spec:
+     template:
+       spec:
+         containers:
+         - name: hello
+           image: busybox:1.28
+           imagePullPolicy: IfNotPresent
+           command:
+           - /bin/sh
+           - -c
+           - date; echo Hello from the Kubernetes cluster
+         restartPolicy: OnFailure
+Kubectl apply -f  jobs-cronjob.yaml
+This cronjob will prints the current time and a hello message every minute:
+To check the result of cronjob -
+Kubectl get cronjob
+To check the result of cronjob -
+Kubectl get jobs
+if you want to suspend the CronJob instead of deleting it, you can annotate the CronJob resource to suspend it.          
+kubectl annotate cronjob <cronjob-name> suspend=true
+Simply delete the cronjob by using this command-
+kubectl delete cronjob <hello>
