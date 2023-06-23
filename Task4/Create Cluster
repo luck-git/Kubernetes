@@ -1,0 +1,4 @@
+Steps to create a cluster -
+Use Command to create a cluster 
+ eksctl create cluster --name cluster1 --node-type t3.medium --region us-east-2 --version 1.26 --nodes 1 --nodegroup-name test
+{This command will create the cluster named by cluster1 and the type will be t3.medium , region would be us-east-2 , version is 1.26 and the Node named by Test. }
