@@ -1,0 +1,4 @@
+Steps to create a Horizontal pod Autoscaling-
+You need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster.
+Run and expose php-apache server
+To demonstrate a HorizontalPodAutoscaler, you will first start a Deployment that runs a container using the hpa-example image, and expose it as a Service using the following manifest:
