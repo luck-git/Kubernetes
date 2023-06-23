@@ -1,0 +1,4 @@
+The k8s metrics server is not installed by default in your Kubernetes cluster.
+With the following command:
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+Everything will be created in the Namespace Kube-System. You can check it there.
