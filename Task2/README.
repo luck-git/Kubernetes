@@ -1,0 +1,8 @@
+In Kubernetes How you can set Requests and Limits.
+Create a Yaml.file > In which we create a pod > Run and nginx image 
+ requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
