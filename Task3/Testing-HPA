@@ -1,0 +1,8 @@
+Now You can check that this Autoscaling is working fine or not By putting Load on it.
+
+By using command-
+kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+
+In one Terminal Apply this command it will put the Load And on the other side of Terminal Use this command to watch the real time results.
+kubectl get hpa php-apache --watch
+
