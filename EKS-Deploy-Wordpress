@@ -1,0 +1,6 @@
+How to create a cluster on EKS and Deploy wordpress on it,
+By using Kubernetes.
+Requirements -
+You need an AWS account in which set a permissions To EKS 
+In your local (AWS CLI) And configure it
+Install eksctl 
